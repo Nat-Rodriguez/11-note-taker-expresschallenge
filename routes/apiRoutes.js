@@ -18,7 +18,7 @@ router.post('/notes', (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-router.delete('/notes', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
   store
     .deleteNote()
     .then(() => {
@@ -28,3 +28,5 @@ router.delete('/notes', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+module.exports = router;
